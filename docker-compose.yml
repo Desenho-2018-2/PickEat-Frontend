@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    container_name: pickeat-api
+    build: .
+    command: npm start
+    ports:
+      - 4201:4200
+    volumes:
+      - .:/pickeat-api
