@@ -7,8 +7,8 @@ services:
         - 8089:4200
         - 49153:49153
     volumes:
-      - .:/pickeat-api
+      - .:/home
     tty: true
     environment:
         - NODE_ENV=dev
-    command: /bin/sh -c "npm install && ng serve"
+    command: /bin/sh -c "npm install && ng serve --host 0.0.0.0"

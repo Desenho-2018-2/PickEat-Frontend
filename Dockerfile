@@ -13,12 +13,12 @@ RUN apk update \
   && yarn cache clean \
   && sed -i -e "s/bin\/ash/bin\/sh/" /etc/passwd 
 
-ENV NODE_ROOT pickeat-api
-RUN mkdir -p $NODE_ROOT
-WORKDIR $NODE_ROOT
+#ENV NODE_ROOT pickeat-api
+#RUN mkdir -p $NODE_ROOT
+#WORKDIR $NODE_ROOT
 
-RUN npm i
+WORKDIR /home
 
-EXPOSE 4200 49153
+# RUN npm i
 
-CMD [ "ng", "serve" ]
+# EXPOSE 4200 49153
