@@ -1,0 +1,5 @@
+$primary-color: #DC0130;
+
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: $primary-color;
+}
