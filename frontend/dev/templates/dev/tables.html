@@ -1,17 +1,27 @@
 {% extends 'dev/base.html' %} {% load static %} {% block content %}
 
 <br>
-<form action="">
-{% for i in tables%}
-    <input type="radio" name="gender" value="male"> {{i}}<br>
-{% endfor %}
-</form>
-
-{% for i in tables%}
-<!-- Colored FAB button with ripple -->
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-    {{i}}
+<div class="mdl-grid demo-content">
+    <div class="mdl-grid">
+            <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+                <h3>Mesas disponíveis</h3>
+            </div>
+    </div>
+</div>
+<div class="mdl-grid demo-content">
+        <div class="mdl-grid">
+    <div class="responsible-img">
+    {% for i in tables%}
+    
+    <!-- Colored FAB button with ripple -->
+    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored responsible-img-a">
+        {{i}}
+    </button>
+    {% endfor %}
+    </div>
+    </div>
+</div>
+<button target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">
+    <i class="material-icons">arrow_forward</i>
 </button>
-{% endfor %}
-
 {% endblock %}

@@ -6,5 +6,5 @@ def index(request):
     return render(request, 'dev/index.html', {'orders': orders})
 
 def tables(request):
-    table = [1,2,3,4,5]
+    table = [1,2,3,4,5,6,7,8,9]
     return render(request, 'dev/tables.html', {"tables":table})

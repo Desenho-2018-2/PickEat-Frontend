@@ -14,6 +14,10 @@
  * limitations under the License.
  */
 
+ .greenBox {
+    display: none;
+}
+
  .switch {
     position: relative;
     display: inline-block;
