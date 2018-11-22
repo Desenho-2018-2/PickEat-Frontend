@@ -1,0 +1,17 @@
+{% extends 'dev/base.html' %} {% load static %} {% block content %}
+
+<br>
+<form action="">
+{% for i in tables%}
+    <input type="radio" name="gender" value="male"> {{i}}<br>
+{% endfor %}
+</form>
+
+{% for i in tables%}
+<!-- Colored FAB button with ripple -->
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+    {{i}}
+</button>
+{% endfor %}
+
+{% endblock %}

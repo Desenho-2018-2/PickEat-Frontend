@@ -1,0 +1,46 @@
+{% extends 'dev/base.html' %} {% load static %} {% block content %}
+
+<div class="mdl-grid demo-content">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col"></div>
+        <div class="mdl-cell mdl-cell--4-col">
+            <label class="switch">
+                <input type="checkbox" id="togBtn">
+                <div class="slider round">
+                </div>
+            </label>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col"></div>
+    </div>
+
+
+</div>
+<div class="mdl-grid demo-content">
+    <div class="mdl-grid">
+        <div class="demo-list-action mdl-list">
+            {% for order in orders %}
+            <div class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                    <span>Mesa {{order.table}}</span>
+                </span>
+                {% if order.status == 'done' %}
+                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">done</i></a>
+                {% endif %}
+                {% if order.status == 'cook' %}
+                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">alarm</i></a>
+                {% endif %}
+                {% if order.status == 'outro' %}
+                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">notification_important</i></a>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<a href="{% url 'tables' %}">
+    <button target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+        <i class="material-icons">add</i>
+    </button>
+</a>
+
+{% endblock %}
