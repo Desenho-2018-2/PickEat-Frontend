@@ -29,34 +29,18 @@
                 {% if order.status == 'cook' %}
                 <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">alarm</i></a>
                 {% endif %}
+                {% if order.status == 'outro' %}
+                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">notification_important</i></a>
+                {% endif %}
             </div>
             {% endfor %}
-            <!-- <div class="mdl-list__item">
-                <span class="mdl-list__item-primary-content">
-                    <span>Mesa 1</span>
-                </span>
-                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">done</i></a>
-            </div>
-            <div class="mdl-list__item">
-                <span class="mdl-list__item-primary-content">
-                    <span>Mesa 2</span>
-                </span>
-                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">alarm</i></a>
-            </div>
-            <div class="mdl-list__item">
-                <span class="mdl-list__item-primary-content">
-                    <span>Mesa 3</span>
-                </span>
-                <span class="mdl-list__item-secondary-content">
-                    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">notification_important</i></a>
-                </span>
-            </div> -->
         </div>
     </div>
 </div>
-
-<button target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-    <i class="material-icons">add</i>
-</button>
+<a href="{% url 'tables' %}">
+    <button target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+        <i class="material-icons">add</i>
+    </button>
+</a>
 
 {% endblock %}
