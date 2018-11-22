@@ -18,8 +18,20 @@
 <div class="mdl-grid demo-content">
     <div class="mdl-grid">
         <div class="demo-list-action mdl-list">
-
+            {% for order in orders %}
             <div class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">
+                    <span>Mesa {{order.table}}</span>
+                </span>
+                {% if order.status == 'done' %}
+                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">done</i></a>
+                {% endif %}
+                {% if order.status == 'cook' %}
+                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">alarm</i></a>
+                {% endif %}
+            </div>
+            {% endfor %}
+            <!-- <div class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
                     <span>Mesa 1</span>
                 </span>
@@ -38,7 +50,7 @@
                 <span class="mdl-list__item-secondary-content">
                     <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">notification_important</i></a>
                 </span>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
