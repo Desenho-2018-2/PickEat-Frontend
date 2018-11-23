@@ -4,29 +4,32 @@
 
 <br>
 
+<div class="center">
 
-<p id="box">Bebidas</p>
-
-<form action="">
-    {% for i in beverages%}
-
-    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-        +
-    </button>
-    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-        -
-    </button>
-    {{i.name}}
-    <br>
-    {% endfor %}
-</form>
-
-<br>
-<p id="box">Petiscos</p>
-
-<form action="">
-        {% for i in snacks%}
+        <p id="box">Cervejas</p>
     
+        <form action="">
+            {% for i in beers%}
+    
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                +
+            </button>
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                -
+            </button>
+            {{i.name}}
+            <br>
+            {% endfor %}
+        </form>
+    </div>
+    <br>
+<div class="center">
+
+    <p id="box">Drinks</p>
+
+    <form action="">
+        {% for i in drinks%}
+
         <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
             +
         </button>
@@ -36,9 +39,26 @@
         {{i.name}}
         <br>
         {% endfor %}
-</form>
+    </form>
+</div>
+<br>
+<div class="center">
+    <p id="box">Petiscos</p>
 
+    <form action="">
+        {% for i in snacks%}
 
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+            +
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+            -
+        </button>
+        {{i.name}}
+        <br>
+        {% endfor %}
+    </form>
 
+</div>
 
 {% endblock %}
