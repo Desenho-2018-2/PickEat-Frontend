@@ -1,0 +1,15 @@
+#box {
+    border-radius: 10px;
+    background: rgb(0,0,0,.14);
+    padding: 20px; 
+    width: 200px;
+    height: 15px;
+    font-size: 30px
+}
+
+.center {
+    margin: auto;
+    width: 95%;
+    padding: 10px;
+}
+

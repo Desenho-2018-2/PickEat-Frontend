@@ -1,0 +1,64 @@
+{% extends 'dev/base.html' %} {% load static %} {% block content %}
+
+<link rel="stylesheet" href="{% static 'css/menu.css' %}">
+
+<br>
+
+<div class="center">
+
+        <p id="box">Cervejas</p>
+    
+        <form action="">
+            {% for i in beers%}
+    
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                +
+            </button>
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                -
+            </button>
+            {{i.name}}
+            <br>
+            {% endfor %}
+        </form>
+    </div>
+    <br>
+<div class="center">
+
+    <p id="box">Drinks</p>
+
+    <form action="">
+        {% for i in drinks%}
+
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+            +
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+            -
+        </button>
+        {{i.name}}
+        <br>
+        {% endfor %}
+    </form>
+</div>
+<br>
+<div class="center">
+    <p id="box">Petiscos</p>
+
+    <form action="">
+        {% for i in snacks%}
+
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+            +
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+            -
+        </button>
+        {{i.name}}
+        <br>
+        {% endfor %}
+    </form>
+
+</div>
+
+{% endblock %}
