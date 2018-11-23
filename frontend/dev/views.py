@@ -6,7 +6,7 @@ def index(request):
     return render(request, 'dev/index.html', {'orders': orders})
 
 def tables(request):
-    table = [1,2,3,4,5]
+    table = [{'number': 1,'status': 'aberta'},{'number':2,'status':'aberta'},{'number':3,'status':'fechada'},{'number':4,'status':'aberta'},{'number':1,'status':'fechada'}]
     return render(request, 'dev/tables.html', {"tables":table})
 
 def order(request):
@@ -17,3 +17,5 @@ def menu(request):
     snack = [{'name':'Porção de Carne de Sol', 'id': 1, 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'},{'name':'Isca de Frango', 'id': 2, 'description': 'Curabitur et elit accumsan, commodo neque in'},{'name':'Batata Frita', 'id': 3, 'description': 'Orci varius natoque penatibus et magnis'}]
     beer = [{'name':'Skoll', 'id': 1, 'description': ''},{'name':'Heineken', 'id': 2, 'description': ''},{'name':'Kaiser', 'id': 3, 'description': ''}]
     return render(request, 'dev/menu.html', {"drinks":drink,"snacks":snack,"beers":beer})
+
+    

@@ -219,6 +219,20 @@ img {
     animation: loader 500ms linear infinite;
 }
 
+/* Cards */
+
+.demo-card-wide.mdl-card {
+    width: 512px;
+  }
+  .demo-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background: url('../assets/demos/welcome_card.jpg') center / cover;
+  }
+  .demo-card-wide > .mdl-card__menu {
+    color: #fff;
+  }
+
 /* Media Query */
 
 @media screen and (max-width: 40rem) {
