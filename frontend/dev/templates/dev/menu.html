@@ -1,0 +1,29 @@
+{% extends 'dev/base.html' %} {% load static %} {% block content %}
+
+<div class="mdl-tabs mdl-js-tabs">
+    <div class="mdl-tabs__tab-bar">
+        <div class="responsible-img">
+        {% for i in foods%}
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp responsible-img-a">
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">{{i.name}}</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <div class="mdl-grid">
+                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" id="{{i.id}}">
+                            <i class="material-icons">remove</i>
+                        </button>
+                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" onclick="incrementValue({{i.id}})" id="{{i.id}}">
+                            <i class="material-icons">add</i>
+                        </button>
+                    </div>
+                </div>
+                <div class="mdl-card__menu">
+                    <span class="mdl-badge" data-badge="{{i.value}}" id="{{i.id}}">Quantidade</span>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
