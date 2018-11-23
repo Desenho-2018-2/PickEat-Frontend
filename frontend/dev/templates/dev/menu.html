@@ -1,0 +1,44 @@
+{% extends 'dev/base.html' %} {% load static %} {% block content %}
+
+<link rel="stylesheet" href="{% static 'css/menu.css' %}">
+
+<br>
+
+
+<p id="box">Bebidas</p>
+
+<form action="">
+    {% for i in beverages%}
+
+    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+        +
+    </button>
+    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+        -
+    </button>
+    {{i.name}}
+    <br>
+    {% endfor %}
+</form>
+
+<br>
+<p id="box">Petiscos</p>
+
+<form action="">
+        {% for i in snacks%}
+    
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+            +
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+            -
+        </button>
+        {{i.name}}
+        <br>
+        {% endfor %}
+</form>
+
+
+
+
+{% endblock %}

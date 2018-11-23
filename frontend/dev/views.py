@@ -13,4 +13,6 @@ def order(request):
     return render(request, 'dev/order.html')
 
 def menu(request):
-    return render(request, 'dev/menu.html')
+    beverage = [{'name':'Marguerita', 'id': 1, 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'},{'name':'Ice Vanilla', 'id': 2, 'description': 'Curabitur et elit accumsan, commodo neque in'},{'name':'Blue Caribbean', 'id': 3, 'description': 'Orci varius natoque penatibus et magnis'},{'name':'Corona', 'id': 4, 'description': 'Orci varius natoque penatibus et magnis'}]
+    snack = [{'name':'Porção de Carne de Sol', 'id': 1, 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'},{'name':'Isca de Frango', 'id': 2, 'description': 'Curabitur et elit accumsan, commodo neque in'},{'name':'Batata Frita', 'id': 3, 'description': 'Orci varius natoque penatibus et magnis'}]
+    return render(request, 'dev/menu.html', {"beverages":beverage,"snacks":snack})
