@@ -11,3 +11,6 @@ def tables(request):
 
 def order(request):
     return render(request, 'dev/order.html')
+
+def menu(request):
+    return render(request, 'dev/menu.html')
