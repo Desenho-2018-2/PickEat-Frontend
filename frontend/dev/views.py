@@ -8,3 +8,6 @@ def index(request):
 def tables(request):
     table = [1,2,3,4,5]
     return render(request, 'dev/tables.html', {"tables":table})
+
+def order(request):
+    return render(request, 'dev/order.html')
