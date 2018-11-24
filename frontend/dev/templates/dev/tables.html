@@ -1,17 +1,123 @@
 {% extends 'dev/base.html' %} {% load static %} {% block content %}
 
-<br>
-<form action="">
-{% for i in tables%}
-    <input type="radio" name="gender" value="male"> {{i}}<br>
-{% endfor %}
-</form>
+<!-- <br>
+<div class="mdl-grid demo-content">
+    <div class="mdl-grid">
+            <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+                <h3>Mesas disponíveis</h3>
+            </div>
+    </div>
+</div>
+<div class="mdl-grid demo-content">
+        <div class="mdl-grid">
+    <div class="responsible-img">
+    {% for i in tables%}
+    
+    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored responsible-img-a">
+        {{i}}
+    </button>
+    {% endfor %}
+    </div>
+    </div>
+</div>
+<button target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">
+    <i class="material-icons">arrow_forward</i>
+</button> -->
 
-{% for i in tables%}
-<!-- Colored FAB button with ripple -->
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-    {{i}}
-</button>
-{% endfor %}
+
+
+<style>
+    /* The container */
+    .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    /* Hide the browser's default checkbox */
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    
+    /* Create a custom checkbox */
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+    }
+    
+    /* On mouse-over, add a grey background color */
+    .container:hover input ~ .checkmark {
+        background-color: #ccc;
+    }
+    
+    /* When the checkbox is checked, add a blue background */
+    .container input:checked ~ .checkmark {
+        background-color: #2196F3;
+    }
+    
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    
+    /* Show the checkmark when checked */
+    .container input:checked ~ .checkmark:after {
+        display: block;
+    }
+    
+    /* Style the checkmark/indicator */
+    .container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    </style>
+
+<form>
+    <div class="mdl-grid demo-content">
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+            <tbody>
+                {% for table in tables %}
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <label class="container">{{table}}
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="mdl-grid demo-content">
+        <button type="submit" form="form1" value="Submit" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">
+            <i class="material-icons">arrow_forward</i>
+        </button>
+    </div>
+</form>
 
 {% endblock %}

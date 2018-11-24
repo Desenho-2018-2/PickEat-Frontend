@@ -1,11 +1,11 @@
-FROM alpine:3.7
+FROM alpine:3.8
 
 RUN apk add --update \  
         python3-dev \
         py-pip \
         bash 
 
- RUN pip install --upgrade pip
+RUN pip install --upgrade pip
 
 WORKDIR /home
 

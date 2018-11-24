@@ -1,23 +1,27 @@
 {% extends 'dev/base.html' %} {% load static %} {% block content %}
 
-<div class="mdl-grid demo-content">
+<!-- <div class="mdl-grid demo-content">
     <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--4-col"></div>
         <div class="mdl-cell mdl-cell--4-col">
-            <label class="switch">
-                <input type="checkbox" id="togBtn">
-                <div class="slider round">
-                </div>
-            </label>
+            <div class="bandPackageCheck">
+                <label class="switch">
+                    <input type="checkbox" id="togBtn" name="togBtn" checked="checked">
+                    <div class="slider round">
+                    </div>
+                </label>
+            </div>
+            <div class="greenBox" id="content1">Content 1</div>
         </div>
         <div class="mdl-cell mdl-cell--4-col"></div>
     </div>
 
 
-</div>
-<div class="mdl-grid demo-content">
+</div> -->
+<!-- <div class="mdl-grid demo-content">
     <div class="mdl-grid">
         <div class="demo-list-action mdl-list">
+            {% if 'togBtn' == request.GET %}
             {% for order in orders %}
             <div class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
@@ -34,11 +38,59 @@
                 {% endif %}
             </div>
             {% endfor %}
+            {% endif %}
+            {% if 'togBtn' != request.GET %}
+            <div class="mdl-list__item">
+                
+            </div>
+            {% endif %}
         </div>
     </div>
+</div> -->
+
+
+
+
+
+<div class="mdl-tabs mdl-js-tabs">
+    <div class="mdl-tabs__tab-bar">
+        <a href="#tab1-panel" class="mdl-tabs__tab is-active">Mesas</a>
+        <a href="#tab2-panel" class="mdl-tabs__tab">Notificações</a>
+    </div>
+
+    <div class="mdl-tabs__panel is-active" id="tab1-panel">
+        <div class="mdl-grid demo-content">
+            <div class="mdl-grid">
+                <div class="demo-list-action mdl-list">
+                    {% for order in orders %}
+                    <div class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            <span>Mesa {{order.table}}</span>
+                        </span>
+                        {% if order.status == 'done' %}
+                        <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">done</i></a>
+                        {% endif %}
+                        {% if order.status == 'cook' %}
+                        <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">alarm</i></a>
+                        {% endif %}
+                        {% if order.status == 'outro' %}
+                        <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">notification_important</i></a>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mdl-tabs__panel" id="tab2-panel">
+        <p>Tab 2 Content</p>
+    </div>
 </div>
+
+
 <a href="{% url 'tables' %}">
-    <button target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+    <button target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">
         <i class="material-icons">add</i>
     </button>
 </a>
